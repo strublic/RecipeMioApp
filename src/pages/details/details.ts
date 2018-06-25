@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
 
 /*
   Generated class for the Details page.
@@ -15,9 +16,16 @@ export class DetailsPage {
   item;
   ing;
 
-  constructor(public navCtrl: NavController, public navParams:NavParams) {
+  constructor(public navCtrl: NavController, public navParams:NavParams, private modal:ModalController) {
       this.item = navParams.data.item;
       this.ing = navParams.data.item.secao[0].conteudo;
+  }
+
+  openModal(item){
+    console.log(item);
+    const myModal = this.modal.create('ModalPage', {item: item});
+
+    myModal.present();
   }
 
   ionViewDidLoad() {
