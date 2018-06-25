@@ -1,6 +1,6 @@
 {
   "name": "recipemio",
-  "app_id": "",
+  "app_id": "9b22e701",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
